@@ -78,7 +78,7 @@ Queremos convertir dicha pregunta en lo siguiente:
         <label for="william-shatner">William Shatner</label>
         <input id="william-shatner" name="actor" type="radio" value="william-shatner">
         <label for="arnold-schwarzenegger">Arnold Schwarzenegger</label>
-        <input id="william-shatner" name="actor" type="radio" value="arnold-schwarzenegger">
+        <input id="arnold-schwarzenegger" name="actor" type="radio" value="arnold-schwarzenegger">
     </form>
 ```
 
