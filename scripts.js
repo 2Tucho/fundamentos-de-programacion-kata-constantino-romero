@@ -48,29 +48,29 @@ function imprimeTitulo(pregunta) {
 }
 
 function imprimeTodasLasRespuestas(pregunta) {
-  let todasRespuestas = "";
-  for (let i = 0; i < pregunta.respuestas.length; i++) {
-      todasRespuestas += imprimeUnaRespuesta(pregunta.respuestas[i]);
+  let TodasRespuestas = "";
+  for (let respuesta = 0; respuesta < (pregunta.respuestas).length; respuesta++) {
+    TodasRespuestas += imprimeUnaRespuesta(respuesta);
   }
-  return todasRespuestas;
+  return TodasRespuestas;
 }
-
+ /* Otra opcion es pasarle a la funcion el objeto mas concreto */
+ /*   TodasRespuestas += imprimeUnaRespuesta(pregunta.respuestas[i]) */
 function imprimeUnaRespuesta(respuesta) {
   let unaRespuesta = "";
   unaRespuesta += imprimeLabel(respuesta);
   unaRespuesta += imprimeInput(respuesta);
   return unaRespuesta;
 }
-
-
 function imprimeLabel(respuesta) {
-  let label=`<label for="${respuesta.id}">${respuesta.label}</label>`;
+  let label = `<label for="${pregunta.respuestas[respuesta].id}">${pregunta.respuestas[respuesta].label}</label>`;
   return label;
 }
-
+/* Es la otra opcion de uso del objeto ya que se ha pasado distinto al invocar a la funcion */
+  /*  let label = `<label for="${respuesta.id}">${respuesta.label}</label>`; */
 function imprimeInput(respuesta) {
-  let input=`<input id="${respuesta.id}" name= "${respuesta.name}" type="radio" value="${respuesta.value}>`;
-  return input;
+  let input = `<input id="${pregunta.respuestas[respuesta].id}" name="${pregunta.respuestas[respuesta].name}" type="radio" value="${pregunta.respuestas[respuesta].value}">`;
+  return input
 }
 
 document.getElementById("contenedorPreguntas").innerHTML = imprimePregunta(pregunta);
